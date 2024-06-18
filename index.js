@@ -1,13 +1,16 @@
-let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let numeros = [4, 3, 1, 5, 5, 7, 2, -47, 2001];
 
 let todos = [];
 
 for (let i = 0; i < numeros.length; i++) {
-  if (numeros[i] % 2 == 0) {
-    todos.unshift(numeros[i]);
-  } else {
-    todos.push(numeros[i]);
+  console.log("No primeiro laço ", numeros[i]);
+  for (let j = i + 1; j < numeros.length; j++) {
+    console.log("No segundo laço ", numeros[j]);
+    if (numeros[i] > numeros[j]) {
+      let aux = numeros[i];
+      numeros[i] = numeros[j];
+      numeros[j] = aux;
+    }
   }
 }
-
-console.log(todos);
+console.log(numeros);
